@@ -1,0 +1,7 @@
+<!DOCTYPE html><html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<h2>Home</h2>
+<div sec:authorize="isAuthenticated()">Xin chào, <span sec:authentication="name"></span></div>
+<a th:href="@{/admin}" sec:authorize="hasRole('ADMIN')">Trang Admin</a>
+</body>
+</html>
